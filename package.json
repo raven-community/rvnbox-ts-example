@@ -1,0 +1,27 @@
+{
+  "name": "rvnbox-ts-example",
+  "version": "1.0.0",
+  "description": "Basic command line node app w/ RVNBOX bindings",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "ls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raven-community/rvnbox-ts-example.git"
+  },
+  "author": "https://twitter.com/James_Cramer",
+  "contributors" : [
+    "MSFTserver"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raven-community/rvnbox-ts-example/issues"
+  },
+  "homepage": "https://github.com/raven-community/rvnbox-ts-example#readme",
+  "devDependencies": {
+    "rvnbox-cli": "github:raven-community/rvnbox-cli#master",
+    "@types/node": "^10.5.2"
+  }
+}
