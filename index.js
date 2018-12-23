@@ -82,11 +82,11 @@ var rootSeed = RVNBOX.Mnemonic.toSeed(mnemonic);
 // master HDNode
 var masterHDNode = RVNBOX.HDNode.fromSeed(rootSeed);
 // HDNode of BIP44 account
-var account = RVNBOX.HDNode.derivePath(masterHDNode, "m/0'/175'/0'");
-console.log("BIP44 Account: \"m/0'/175'/0'\"");
+var account = RVNBOX.HDNode.derivePath(masterHDNode, "m/44'/175'/0'");
+console.log("BIP44 Account: \"m/44'/175'/0'\"");
 for (var i = 0; i < 10; i++) {
-    var childNode = masterHDNode.derivePath("m/0'/175'/0'/0/" + i);
-    console.log("m/0'/175'/0'/0/" + i + ": " + RVNBOX.HDNode.toLegacyAddress(childNode));
+    var childNode = masterHDNode.derivePath("m/44'/175'/0'/0/" + i);
+    console.log("m/44'/175'/0'/0/" + i + ": " + RVNBOX.HDNode.toLegacyAddress(childNode));
 }
 // derive the first external change address HDNode which is going to spend utxo
 var change = RVNBOX.HDNode.derivePath(account, "0/0");
@@ -99,18 +99,18 @@ RVNBOX.Address.utxo(legacyAddress).then(function (result) {
     }
     // instance of transaction builder
     var transactionBuilder = new RVNBOX.TransactionBuilder('ravencoin');
-    // original amount of corbes in vin
-    var originalAmount = result[0].corbes;
+    // original amount of satoshis in vin
+    var originalAmount = result[0].satoshis;
     // index of vout
     var vout = result[0].vout;
     // txid of vout
     var txid = result[0].txid;
     // add input with txid and index of vout
     transactionBuilder.addInput(txid, vout);
-    // get byte count to calculate fee. paying 1 corbe/byte
+    // get byte count to calculate fee. paying 1 satoshi/byte
     var byteCount = RVNBOX.RavenCoin.getByteCount({ P2PKH: 1 }, { P2PKH: 1 });
     // 192
-    // amount to send to receiver. It's the original amount - 1 corbe/byte for tx size
+    // amount to send to receiver. It's the original amount - 1 satoshi/byte for tx size
     var sendAmount = originalAmount - byteCount;
     // add output w/ address and amount to send
     transactionBuilder.addOutput(legacyAddress, sendAmount);
