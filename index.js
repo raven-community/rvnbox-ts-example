@@ -38,8 +38,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var rvnbox_cli_1 = __importDefault(require("rvnbox-cli/lib/rvnbox-cli"));
-var RVNBOX = new rvnbox_cli_1.default();
+var rvnbox_sdk_1 = __importDefault(require("rvnbox-sdk/lib/rvnbox-sdk"));
+var RVNBOX = new rvnbox_sdk_1.default();
 var langs = [
     'english',
     'chinese_simplified',
@@ -98,7 +98,7 @@ RVNBOX.Address.utxo(legacyAddress).then(function (result) {
         return;
     }
     // instance of transaction builder
-    var transactionBuilder = new RVNBOX.TransactionBuilder('ravencoin');
+    var transactionBuilder = new RVNBOX.TransactionBuilder('testnet');
     // original amount of satoshis in vin
     var originalAmount = result[0].satoshis;
     // index of vout

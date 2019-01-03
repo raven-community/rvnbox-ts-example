@@ -1,7 +1,7 @@
-import RVNBOXCli from 'rvnbox-cli/lib/rvnbox-cli';
-let RVNBOX = new RVNBOXCli();
+import RVNBOXSDK from 'rvnbox-sdk/lib/rvnbox-sdk';
+let RVNBOX = new RVNBOXSDK();
 
-import { AddressDetailsResult } from './node_modules/rvnbox-cli/lib/Address';
+import { AddressDetailsResult } from './node_modules/rvnbox-sdk/lib/Address';
 
 let langs = [
   'english',
@@ -67,7 +67,7 @@ RVNBOX.Address.utxo(legacyAddress).then((result) => {
   }
 
   // instance of transaction builder
-  let transactionBuilder = new RVNBOX.TransactionBuilder('ravencoin');
+  let transactionBuilder = new RVNBOX.TransactionBuilder('testnet');
   // original amount of satoshis in vin
   let originalAmount = result[0].satoshis;
 

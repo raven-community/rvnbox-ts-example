@@ -1,6 +1,6 @@
 {
   "name": "rvnbox-ts-example",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Basic command line node app w/ RVNBOX bindings",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/raven-community/rvnbox-ts-example#readme",
   "devDependencies": {
-    "rvnbox-cli": "github:raven-community/rvnbox-cli#master",
+    "rvnbox-sdk": "^1.0.2",
     "@types/node": "^10.5.2"
   }
 }
