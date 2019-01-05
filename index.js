@@ -40,6 +40,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var rvnbox_sdk_1 = __importDefault(require("rvnbox-sdk/lib/rvnbox-sdk"));
 var RVNBOX = new rvnbox_sdk_1.default();
+var network = "testnet";
 var langs = [
     'english',
     'chinese_simplified',
@@ -98,7 +99,7 @@ RVNBOX.Address.utxo(legacyAddress).then(function (result) {
         return;
     }
     // instance of transaction builder
-    var transactionBuilder = new RVNBOX.TransactionBuilder('testnet');
+    var transactionBuilder = new RVNBOX.TransactionBuilder(network);
     // original amount of satoshis in vin
     var originalAmount = result[0].satoshis;
     // index of vout
