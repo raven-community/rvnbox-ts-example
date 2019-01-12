@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/raven-community/rvnbox-ts-example#readme",
   "devDependencies": {
-    "rvnbox-sdk": "^1.0.3",
+    "rvnbox-sdk": "^1.0.4",
     "@types/node": "^10.5.2"
   }
 }
